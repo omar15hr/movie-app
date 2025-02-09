@@ -3,15 +3,14 @@ import { Movies } from "./components/Movies";
 import { useMovies } from "./hooks/useMovies";
 import { useSearch } from "./hooks/useSearch";
 
-// const API_KEY = "c53286b7";
 
 function App() {
   const { search, updateSearch, error } = useSearch();
-  const { movies } = useMovies();
+  const { movies, getMovies } = useMovies({ search });
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(search);
+    getMovies();
   };
 
   const handleChange = (event) => {

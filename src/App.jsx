@@ -1,13 +1,13 @@
 import "./App.css";
-import responseMovies from "./mocks/with-results.json";
 import { Movies } from "./components/Movies";
+import { useMovies } from "./hooks/useMovies";
 
 const API_KEY = "c53286b7";
 
+
 function App() {
   
-  const movies = responseMovies.Search;
-
+ const { movies: mappedMovies } = useMovies();
   
 
   return (
@@ -24,7 +24,7 @@ function App() {
       </header>
 
       <main>
-        <Movies movies={movies} />
+        <Movies movies={mappedMovies} />
       </main>
     </div>
   );

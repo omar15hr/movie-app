@@ -2,10 +2,10 @@ export function ListOfMovies({ movies }) {
   return (
     <ul>
       {movies.map((movie) => (
-        <li key={movie.imdbID}>
-          <img src={movie.Poster} alt={movie.Title} />
-          <h3>{movie.Title}</h3>
-          <p>{movie.Year}</p>
+        <li key={movie.id}>
+          <img src={movie.poster} alt={movie.title} />
+          <h3>{movie.title}</h3>
+          <p>{movie.year}</p>
         </li>
       ))}
     </ul>
@@ -17,6 +17,6 @@ function NoMoviesResults() {
 }
 
 export function Movies({ movies }) {
-  const hasMovies = movies.length > 0;
+  const hasMovies = movies?.length > 0;
   return hasMovies ? <ListOfMovies movies={movies} /> : <NoMoviesResults />;
 }

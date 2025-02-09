@@ -6,7 +6,6 @@ import { useSearch } from "./hooks/useSearch";
 // const API_KEY = "c53286b7";
 
 function App() {
-  
   const { search, updateSearch, error } = useSearch();
   const { movies } = useMovies();
 
